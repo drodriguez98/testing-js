@@ -1,0 +1,30 @@
+### Mensaje de bienvenida
+
+GET http://localhost:3000/api/wellcome
+
+### Registro
+
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+    "user": "user9",
+    "password": "abc123."
+}
+
+### Iniciar de sesión para obtener un token
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "userInput": "user9",
+    "passwordInput": "abc123."
+}
+
+### Acceso a perfil privado enviando token en la cabecera
+
+GET http://localhost:3000/api/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgxMjZiMzU5LWRjMzYtNDgyMS05NmE4LWMzOGEyOTlhODQxYSIsImlhdCI6MTcwMTU0MDg4MSwiZXhwIjoxNzAyMTQ1NjgxfQ.UF6xy-QAn0MaUxJ3MjF9fKMuvke6XUw68uJNMz0Tyc0
+
+

@@ -1,0 +1,42 @@
+### Obtener todas las películas. 
+
+GET http://localhost:1234/movies
+
+
+### Si se le pasa un género como parámetro, sólo muestra las películas de ese género.
+
+GET http://localhost:1234/movies?genre=Action   
+
+
+### Recuperar una película por su id
+
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### Crear una película utilizando validaciones zod. Si algún atributo no cumple con los requisitos establecidos en el schema (movies.js), la api no los aceptará.
+
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title": "prueba",
+    "year": 2009,
+    "director": "prueba",
+    "duration": 162,
+    "poster": "https://i.etsystatic.com/35681979/r/il/dfe3ba/3957859451/il_fullxfull.3957859451_h27r.jpg",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "rate": 7.5
+}
+
+### Actualizar una película utilizando validaciones zod. Se puede modificar uno o varios atributos excepto el id ya que éste no lo incluímos en el schema.
+
+PATCH http://localhost:1234/movies/39dc5b32-8ee8-11ee-8386-0a0027000012
+Content-Type: application/json
+
+{
+  "year": 2014,
+  "duration": 123
+}
+
+### Borrar una película
+
+DELETE http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3

@@ -1,0 +1,14 @@
+DROP DATABASE IF EXISTS jwtdb2;
+
+CREATE DATABASE jwtdb2;
+
+USE jwtdb2;
+
+CREATE TABLE users (
+
+	id BINARY(36) PRIMARY key default (UUID_TO_BIN(UUID())),
+	user VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	dateAdded DATE NOT NULL
+	
+);

@@ -1,0 +1,71 @@
+### Obtener todos los proyectos
+
+GET http://localhost:4000/api/projects/
+
+### Obtener todas las tareas
+
+GET http://localhost:4000/api/tasks/
+
+### Obtener un producto
+
+GET http://localhost:4000/api/projects/7
+
+### Obtener tareas de un proyecto
+
+GET http://localhost:4000/api/projects/4/tasks
+
+### Obtener una tarea
+
+GET http://localhost:4000/api/tasks/2
+
+### Crear nuevo proyecto
+
+POST http://localhost:4000/api/projects
+Content-Type: application/json
+
+{
+    "name": "project 5",
+    "priority": 5,
+    "description": "description of project 5"
+}
+
+### Crear nueva tarea
+
+POST http://localhost:4000/api/tasks
+Content-Type: application/json
+
+{
+    "name": "task2 of project1",
+    "done": 1,
+    "projectId": 4
+}
+
+### Actualizar un proyecto
+
+PUT http://localhost:4000/api/projects/7
+Content-Type: application/json
+
+{
+    "name": "project 5",
+    "priority": 9,
+    "description": "description of project 5"
+}
+
+### Actualizar una tarea
+
+PUT http://localhost:4000/api/tasks/2
+Content-Type: application/json
+
+{
+    "name": "task1",
+    "done": 1,
+    "projectId": 7
+}
+
+### Borrar un proyecto
+
+DELETE http://localhost:4000/api/projects/9
+
+### Borrar una tarea
+
+DELETE http://localhost:4000/api/tasks/2

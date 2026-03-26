@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Script de Socket.IO para la comunicación del cliente con el servidor -->
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Server</title>
+    <style>
+        h1, button { margin: 45px auto; }
+        body { 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+        }
+        video {
+            width: 800px;
+            height: 600px;
+            margin: 30px auto;
+        }
+        button {
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido HTML -->
+    <h1>Emisión en directo</h1>
+    <video src="" id="video" autoplay="true"></video>
+    <canvas id="preview"></canvas>
+    <div class="status"></div>
+    <!-- Botones para iniciar y detener la emisión -->
+    <button id="startBtn" onclick="startStream()">Iniciar Emisión</button>
+    <button id="stopBtn" onclick="stopStream()" style="display: none;">Detener Emisión</button>
+
+    <script src="server.js"></script>
+</body>
+</html>
